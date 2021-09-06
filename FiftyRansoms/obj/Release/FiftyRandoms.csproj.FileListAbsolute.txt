@@ -1,0 +1,10 @@
+C:\Users\svroh\source\repos\FiftyRansoms\bin\Release\FiftyRansoms.exe.config
+C:\Users\svroh\source\repos\FiftyRansoms\bin\Release\FiftyRansoms.exe
+C:\Users\svroh\source\repos\FiftyRansoms\bin\Release\FiftyRansoms.pdb
+C:\Users\svroh\source\repos\FiftyRansoms\obj\Release\FiftyRandoms.csproj.AssemblyReference.cache
+C:\Users\svroh\source\repos\FiftyRansoms\obj\Release\FiftyRansoms.frm50Randoms.resources
+C:\Users\svroh\source\repos\FiftyRansoms\obj\Release\FiftyRansoms.Properties.Resources.resources
+C:\Users\svroh\source\repos\FiftyRansoms\obj\Release\FiftyRandoms.csproj.GenerateResource.cache
+C:\Users\svroh\source\repos\FiftyRansoms\obj\Release\FiftyRandoms.csproj.CoreCompileInputs.cache
+C:\Users\svroh\source\repos\FiftyRansoms\obj\Release\FiftyRansoms.exe
+C:\Users\svroh\source\repos\FiftyRansoms\obj\Release\FiftyRansoms.pdb

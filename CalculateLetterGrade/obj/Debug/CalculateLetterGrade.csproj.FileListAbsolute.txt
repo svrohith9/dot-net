@@ -1,0 +1,10 @@
+C:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\CalculateLetterGrade\bin\Debug\CalculateLetterGrade.exe.config
+C:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\CalculateLetterGrade\bin\Debug\CalculateLetterGrade.exe
+C:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\CalculateLetterGrade\bin\Debug\CalculateLetterGrade.pdb
+C:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\CalculateLetterGrade\obj\Debug\CalculateLetterGrade.csproj.AssemblyReference.cache
+C:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\CalculateLetterGrade\obj\Debug\CalculateLetterGrade.Properties.Resources.resources
+C:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\CalculateLetterGrade\obj\Debug\CalculateLetterGrade.csproj.GenerateResource.cache
+C:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\CalculateLetterGrade\obj\Debug\CalculateLetterGrade.csproj.CoreCompileInputs.cache
+C:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\CalculateLetterGrade\obj\Debug\CalculateLetterGrade.exe
+C:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\CalculateLetterGrade\obj\Debug\CalculateLetterGrade.pdb
+C:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\CalculateLetterGrade\obj\Debug\CalculateLetterGrade.frmCalculateGrade.resources

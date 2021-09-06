@@ -1,0 +1,10 @@
+C:\Users\svroh\source\repos\ScoreCalculator\bin\Debug\ScoreCalculator.exe.config
+C:\Users\svroh\source\repos\ScoreCalculator\bin\Debug\ScoreCalculator.exe
+C:\Users\svroh\source\repos\ScoreCalculator\bin\Debug\ScoreCalculator.pdb
+C:\Users\svroh\source\repos\ScoreCalculator\obj\Debug\ScoreCalculator.csproj.AssemblyReference.cache
+C:\Users\svroh\source\repos\ScoreCalculator\obj\Debug\ScoreCalculator.frmCalculateScores.resources
+C:\Users\svroh\source\repos\ScoreCalculator\obj\Debug\ScoreCalculator.Properties.Resources.resources
+C:\Users\svroh\source\repos\ScoreCalculator\obj\Debug\ScoreCalculator.csproj.GenerateResource.cache
+C:\Users\svroh\source\repos\ScoreCalculator\obj\Debug\ScoreCalculator.csproj.CoreCompileInputs.cache
+C:\Users\svroh\source\repos\ScoreCalculator\obj\Debug\ScoreCalculator.exe
+C:\Users\svroh\source\repos\ScoreCalculator\obj\Debug\ScoreCalculator.pdb
