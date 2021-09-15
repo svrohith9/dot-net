@@ -60,3 +60,19 @@ Use a label object named labRandoms to display up to 50 random numbers, ten per 
 Use a label object named labErr to display the error message in red, 12 points, and bold face. It should not display anything until the error occurs. When it displays, make sure the message does not overlap the display of random numbers.
 Name the three buttons as btnGet, btnClear, and btnExit, respectively.
 When the user presses the Enter key on the keyboard, the Click event of the Get 10 Randoms button should fire. When the user presses the Esc key on the keyboard, the Click event of the Exit button should fire. 
+
+
+## **Project 3** 
+
+Project Requirements:
+
+Adjust the form's size such that it's not too large or too small to hold other objects. Let the form be displayed at the center of your screen regardless the screen's size. Be sure the form shows 'Simple Calculator' in its title.
+Add labels, text boxes, and buttons to the form and set the properties of the form and its controls so they appear as shown above. Be sure the Result text box is read-only. Font size of these controls is suggested to be 16 points. Set 'C' and 'x' to be the access key of Calculate and Exit buttons, respectively, so when Alt key is pressed at run time, the C and x characters of the two buttons are underscored (see p.46~7 of Chapter 2 for access key usage and setting). Also, let the Calculate button be activated when the user presses the Enter key and the Exit button be activated when the user presses the Esc key.
+Code a private method named Calculate() that performs the requested operation and returns a decimal value. This method should accept the following arguments:
+operand1 (decimal type): it's the value entered for the first operand.
+op (string type): it should be one of these four operators: +, -, *, or /.
+operand2 (decimal type): it's the value entered for the second operand.
+Create an event handler for the Click event of the Calculate button. This event handler should get the two numbers and operator the user enters, call the Calculate() method to get the result of the calculation, display the result rounded to four decimal places (see Math.Round() in Chapter 4), and move the focus to the Operand 1 text box. To avoid invalid input of numbers and operator, you will use TryParse() method of Decimal (see examples on p.116~7) to get the two input numbers and test if the input operator is one of +, -, *, or /. Any invalid input (either a bad numbers like '23Ah6' or bad operator like '@' or '44') will force an error message "Cannot calculate due to invalid input!" to be displayed in a popup dialog by using MessageBox (see the right figure shown above). This dialog should have a title of 'ERROR'.
+Create an event handler for the Click event of the Exit button that closes the form.
+Create an event handler that clears the Result text box whenever the user changes the text in any of the other three input text boxes (e.g., hitting Backspace or Delete key or inserting more character in text boxes). Hint: let this same event handler be "wired" to the TextChanged event of all three input text boxes.
+Test the application to be sure it works correctly.
