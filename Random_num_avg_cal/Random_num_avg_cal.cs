@@ -46,10 +46,9 @@ class Assignment4
         int[] nums = new int[5];
         even = 0;
         zero = 0;
-        Random random = new Random();
         for (int i = 0; i < 5; i++)
         {
-            nums[i] = random.Next(begin, end);
+            nums[i] = random.Next(begin, end+1);
             EvenOrZero(nums[i], ref even, ref zero);
             sum += nums[i];
         }
@@ -63,4 +62,5 @@ class Assignment4
         else if (number % 2 == 0)
             e += 1;
     }
+    public static readonly Random random = new Random();
 }
