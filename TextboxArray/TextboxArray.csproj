@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{49E80980-D3A8-47E6-9CB0-6D69B23BA97A}</ProjectGuid>
+    <ProjectGuid>{25DA85AB-FBF8-464A-88BF-239254FB4147}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>TermProj</RootNamespace>
-    <AssemblyName>TermProj</AssemblyName>
+    <RootNamespace>TextboxArray</RootNamespace>
+    <AssemblyName>TextboxArray</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

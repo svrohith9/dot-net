@@ -1,0 +1,10 @@
+C:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\dot-net-win-forms\TextboxArray\obj\Release\TextboxArray.csproj.AssemblyReference.cache
+C:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\dot-net-win-forms\TextboxArray\obj\Release\TextboxArray.Form1.resources
+C:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\dot-net-win-forms\TextboxArray\obj\Release\TextboxArray.Properties.Resources.resources
+C:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\dot-net-win-forms\TextboxArray\obj\Release\TextboxArray.csproj.GenerateResource.cache
+C:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\dot-net-win-forms\TextboxArray\obj\Release\TextboxArray.csproj.CoreCompileInputs.cache
+C:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\dot-net-win-forms\TextboxArray\bin\Release\TextboxArray.exe.config
+C:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\dot-net-win-forms\TextboxArray\bin\Release\TextboxArray.exe
+C:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\dot-net-win-forms\TextboxArray\bin\Release\TextboxArray.pdb
+C:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\dot-net-win-forms\TextboxArray\obj\Release\TextboxArray.exe
+C:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\dot-net-win-forms\TextboxArray\obj\Release\TextboxArray.pdb

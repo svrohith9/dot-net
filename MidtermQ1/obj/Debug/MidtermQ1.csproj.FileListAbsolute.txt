@@ -1,0 +1,10 @@
+C:\Users\svroh\source\repos\MidtermQ1\bin\Debug\MidtermQ1.exe.config
+C:\Users\svroh\source\repos\MidtermQ1\bin\Debug\MidtermQ1.exe
+C:\Users\svroh\source\repos\MidtermQ1\bin\Debug\MidtermQ1.pdb
+C:\Users\svroh\source\repos\MidtermQ1\obj\Debug\MidtermQ1.csproj.AssemblyReference.cache
+C:\Users\svroh\source\repos\MidtermQ1\obj\Debug\MidtermQ1.MidtermQ1.resources
+C:\Users\svroh\source\repos\MidtermQ1\obj\Debug\MidtermQ1.Properties.Resources.resources
+C:\Users\svroh\source\repos\MidtermQ1\obj\Debug\MidtermQ1.csproj.GenerateResource.cache
+C:\Users\svroh\source\repos\MidtermQ1\obj\Debug\MidtermQ1.csproj.CoreCompileInputs.cache
+C:\Users\svroh\source\repos\MidtermQ1\obj\Debug\MidtermQ1.exe
+C:\Users\svroh\source\repos\MidtermQ1\obj\Debug\MidtermQ1.pdb

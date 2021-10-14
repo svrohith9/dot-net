@@ -1,0 +1,20 @@
+C:\Users\svroh\source\repos\TextboxArray\bin\Debug\TextboxArray.exe.config
+C:\Users\svroh\source\repos\TextboxArray\bin\Debug\TextboxArray.exe
+C:\Users\svroh\source\repos\TextboxArray\bin\Debug\TextboxArray.pdb
+C:\Users\svroh\source\repos\TextboxArray\obj\Debug\TextboxArray.csproj.AssemblyReference.cache
+C:\Users\svroh\source\repos\TextboxArray\obj\Debug\TextboxArray.Form1.resources
+C:\Users\svroh\source\repos\TextboxArray\obj\Debug\TextboxArray.Properties.Resources.resources
+C:\Users\svroh\source\repos\TextboxArray\obj\Debug\TextboxArray.csproj.GenerateResource.cache
+C:\Users\svroh\source\repos\TextboxArray\obj\Debug\TextboxArray.csproj.CoreCompileInputs.cache
+C:\Users\svroh\source\repos\TextboxArray\obj\Debug\TextboxArray.exe
+C:\Users\svroh\source\repos\TextboxArray\obj\Debug\TextboxArray.pdb
+C:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\dot-net-win-forms\TextboxArray\obj\Debug\TextboxArray.Form1.resources
+C:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\dot-net-win-forms\TextboxArray\obj\Debug\TextboxArray.Properties.Resources.resources
+C:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\dot-net-win-forms\TextboxArray\obj\Debug\TextboxArray.csproj.GenerateResource.cache
+C:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\dot-net-win-forms\TextboxArray\obj\Debug\TextboxArray.csproj.CoreCompileInputs.cache
+C:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\dot-net-win-forms\TextboxArray\bin\Debug\TextboxArray.exe.config
+C:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\dot-net-win-forms\TextboxArray\bin\Debug\TextboxArray.exe
+C:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\dot-net-win-forms\TextboxArray\bin\Debug\TextboxArray.pdb
+C:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\dot-net-win-forms\TextboxArray\obj\Debug\TextboxArray.exe
+C:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\dot-net-win-forms\TextboxArray\obj\Debug\TextboxArray.pdb
+C:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\dot-net-win-forms\TextboxArray\obj\Debug\TextboxArray.csproj.AssemblyReference.cache
