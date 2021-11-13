@@ -111,7 +111,7 @@ namespace My_Media_Player
             this.radioButton2.Size = new System.Drawing.Size(48, 17);
             this.radioButton2.TabIndex = 6;
             this.radioButton2.TabStop = true;
-            this.radioButton2.Text = ".mp3";
+            this.radioButton2.Text = ".mp4";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // radioButton3

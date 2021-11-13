@@ -31,7 +31,7 @@ namespace My_Media_Player
                 if (radioButton1.Checked == true && radioButton2.Checked == false && radioButton3.Checked == false)
                     path += ".avi";
                 else if (radioButton1.Checked == false && radioButton2.Checked == true && radioButton3.Checked == false)
-                    path += ".mp3";
+                    path += ".mp4";
                 else if (radioButton1.Checked == false && radioButton2.Checked == false && radioButton3.Checked == true)
                     path += ".wmv";
                 else
