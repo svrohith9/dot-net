@@ -90,6 +90,7 @@ namespace TermProj
             this.game2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.game3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnHistory = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -717,12 +718,25 @@ namespace TermProj
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
+            // btnHistory
+            // 
+            this.btnHistory.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.btnHistory.Location = new System.Drawing.Point(301, 43);
+            this.btnHistory.Name = "btnHistory";
+            this.btnHistory.Size = new System.Drawing.Size(144, 35);
+            this.btnHistory.TabIndex = 58;
+            this.btnHistory.Text = "View History";
+            this.btnHistory.UseVisualStyleBackColor = false;
+            this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(484, 451);
+            this.Controls.Add(this.btnHistory);
             this.Controls.Add(this.btnSol);
             this.Controls.Add(this.btnAbort);
             this.Controls.Add(this.btn66);
@@ -852,6 +866,7 @@ namespace TermProj
         private System.Windows.Forms.ToolStripMenuItem game2ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem game3ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.Button btnHistory;
     }
 }
 

@@ -14,16 +14,13 @@ namespace TermProj
     public partial class Game : Form
     {
 
-        Form2 form2;
-
-        int initial_x, initial_y;
+        int initial_x = -1, initial_y = -1;
         Button[,] btnarray;
         int[,] showSol = new int[5, 5];
         System.Timers.Timer t;
         int h, m, s;
         bool isPaused = true;
         bool isStarted = false;
-        bool isGameOver = false;
         string currentSavedTime = "";
         //      btn number counter
         int counter = 1;
@@ -40,8 +37,22 @@ namespace TermProj
             this.Close();
         }
 
+        private void clearScreen()
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < 5; j++)
+                {
+                    btnarray[i, j].Text = "";
+                    btnarray[i, j].Enabled = true;
+                }
+            }
+        }
+
         private void btnStart_Click(object sender, EventArgs e)
         {
+            if (initial_x >= 0 && initial_y >= 0)
+                clearScreen();
             isPaused = false;
             isStarted = true;
             btnStart.Enabled = false;
@@ -103,7 +114,7 @@ namespace TermProj
 
         private void btnSol_Click(object sender, EventArgs e)
         {
-            if (initial_x >= 0 && initial_y >= 0)
+            if (initial_x >= 0 && initial_y >= 0 && btnarray[initial_x, initial_y].Text == "1")
             {
 
                 if (initial_x == 0 && initial_y == 0)
@@ -316,16 +327,29 @@ namespace TermProj
                 }
             }
             isPaused = true;
+            this.btnStart.Enabled = true;
             this.resetTimer();
         }
 
         private void btnAbort_Click(object sender, EventArgs e)
         {
             //save game data and show dialog
-            if (isStarted)
+
+            if (initial_x >= 0 && initial_y >= 0)
             {
-                form2.ShowDialog();
+                isPaused = true;
+                s = m = h = 0;
+                resetTimer();
+                clearScreen();
+                btnStart.Enabled = true;
+                btnarray[initial_y, initial_y].Enabled = true;
             }
+            return;
+
+        }
+
+        private void btnHistory_Click(object sender, EventArgs e)
+        {
 
         }
 
@@ -377,7 +401,7 @@ namespace TermProj
                                     {
                                         if ((btnCLicked == btnarray[i - 1, j - 1]) || (btnCLicked == btnarray[i - 1, j]) ||
                                             (btnCLicked == btnarray[i, j - 1]) ||
-                                            (btnCLicked == btnarray[i + 1, j]))
+                                            (btnCLicked == btnarray[i + 1, j]) || (btnCLicked == btnarray[i + 1, j - 1]))
 
                                         {
                                             btnCLicked.Text = (++counter).ToString();
@@ -386,23 +410,27 @@ namespace TermProj
                                     }
                                     else if (i == 4 && j > 0 && btnCLicked.Text == "")
                                     {
-                                        if ((btnCLicked == btnarray[i - 1, j - 1]) || (btnCLicked == btnarray[i, j - 1]) || (btnCLicked == btnarray[i - 1, j]) || (btnCLicked == btnarray[i - 1, j + 1]) || (btnCLicked == btnarray[i, j + 1]))
+                                        if ((btnCLicked == btnarray[i - 1, j - 1]) ||
+                                            (btnCLicked == btnarray[i, j - 1]) ||
+                                            (btnCLicked == btnarray[i - 1, j]) ||
+                                            (btnCLicked == btnarray[i - 1, j + 1]) ||
+                                            (btnCLicked == btnarray[i, j + 1]))
                                         {
                                             btnCLicked.Text = (++counter).ToString();
                                             break;
                                         }
                                     }
-                                    else if (i == 0 && j > 0)
+                                    else if (i == 0 && j > 0 && btnCLicked.Text == "")
                                     {
                                         if (j == 4)
                                         {
-                                            if (btnCLicked.Text == "" && ((btnCLicked == btnarray[i, j - 1]) || (btnCLicked == btnarray[i + 1, j]) || (btnCLicked == btnarray[i + 1, j - 1])))
+                                            if ((btnCLicked == btnarray[i, j - 1]) || (btnCLicked == btnarray[i + 1, j]) || (btnCLicked == btnarray[i + 1, j - 1]))
                                             {
                                                 btnCLicked.Text = (++counter).ToString();
                                                 break;
                                             }
                                         }
-                                        else if (btnCLicked.Text == "" && ((btnCLicked == btnarray[i, j - 1]) || (btnCLicked == btnarray[i + 1, j]) || (btnCLicked == btnarray[i + 1, j - 1]) || (btnCLicked == btnarray[i, j + 1]) || (btnCLicked == btnarray[i + 1, j + 1]))
+                                        else if ((btnCLicked == btnarray[i, j - 1]) || (btnCLicked == btnarray[i + 1, j]) || (btnCLicked == btnarray[i + 1, j - 1]) || (btnCLicked == btnarray[i, j + 1]) || (btnCLicked == btnarray[i + 1, j + 1])
                                             )
                                         {
                                             btnCLicked.Text = (++counter).ToString();
@@ -445,11 +473,25 @@ namespace TermProj
                                     currentSavedTime = tbTimer.Text.ToString();
                                     Console.WriteLine("::::::TIME TO FINISH::::::", currentSavedTime);
                                     isPaused = true;
+                                    btnStart.Enabled = true;
                                     counter = 0;
                                     MessageBox.Show("You Won!", "Congratulations");
+                                    clearScreen();
+                                    resetTimer();
                                 }
                             }
                         }
+                    }
+                    if (!IsNotLockedSituation(btnCLicked) && counter > 1 && counter < 25)
+                    {
+                        currentSavedTime = tbTimer.Text.ToString();
+                        Console.WriteLine("::::::TIME TO FINISH::::::", currentSavedTime);
+                        isPaused = true;
+                        btnStart.Enabled = true;
+                        counter = 0;
+                        MessageBox.Show("You Lost!", "Game Over");
+                        clearScreen();
+                        resetTimer();
                     }
                 }
             }
@@ -464,14 +506,44 @@ namespace TermProj
             }
         }
 
+        private bool IsNotLockedSituation(Button btn)
+        {
+            bool res = false;
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < 5; j++)
+                {
+                    if (btn == btnarray[i, j])
+                    {
+                        if (i > 0 && j > 0 && btnarray[i - 1, j - 1].Text == "")
+                            res = true;
+                        else if (i > 0 && btnarray[i - 1, j].Text == "")
+                            res = true;
+                        else if (i > 0 && j < 4 && btnarray[i - 1, j + 1].Text == "")
+                            res = true;
+                        else if (j > 0 && btnarray[i, j - 1].Text == "")
+                            res = true;
+                        else if (j < 4 && btnarray[i, j + 1].Text == "")
+                            res = true;
+                        else if (i < 4 && j > 0 && btnarray[i + 1, j - 1].Text == "")
+                            res = true;
+                        else if (i < 4 && btnarray[i + 1, j].Text == "")
+                            res = true;
+                        else if (i < 4 && j < 4 && btnarray[i + 1, j + 1].Text == "")
+                            res = true;
+                    }
+                }
+            }
+            return res;
+
+            //Console.WriteLine(counter + "::::" + i + "," + j);
+        }
 
         private void tbTimer_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-
         public static readonly Random random = new Random();
-
     }
 }
