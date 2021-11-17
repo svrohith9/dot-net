@@ -323,7 +323,7 @@ namespace TermProj
                                               { 12, 23, 24, 17, 2 },
                                               { 13, 14, 15, 16, 1 } };
                 }
-                gamedata.Add("Game#" + gameid + "   Game Exited " + starttime + "   " + tbTimer.Text.ToString());
+                gamedata.Add("Game#" + gameid + "  Game Exited    " + starttime + "   " + tbTimer.Text.ToString());
 
                 for (int i = 0; i < 5; i++)
                 {
@@ -343,7 +343,7 @@ namespace TermProj
         {
             //save game data and show dialog
             if (tbTimer.Text != "00:00:00")
-                gamedata.Add("Game#" + gameid + " Game Aborted  " + starttime + "   " + tbTimer.Text.ToString());
+                gamedata.Add("Game#" + gameid + "  Game Aborted  " + starttime + "   " + tbTimer.Text.ToString());
             if (initial_x >= 0 && initial_y >= 0)
             {
                 isPaused = true;
@@ -371,7 +371,7 @@ namespace TermProj
             {
                 if (isStarted)
                 {
-                    if (counter != 0 && counter != 25)
+                    if (counter != 0 && counter != 25&&tbTimer.Text!="00:00:00")
                         isPaused = false;
                     //                  test button clicks
                     //                  btnCLicked.Text = "X";
@@ -486,7 +486,7 @@ namespace TermProj
                                     isPaused = true;
                                     btnStart.Enabled = true;
                                     counter = 0;
-                                    gamedata.Add("Game#" + gameid + "   Game Won   " + starttime + "   " + tbTimer.Text.ToString());
+                                    gamedata.Add("Game#" + gameid + "  Game Won      " + starttime + "   " + tbTimer.Text.ToString());
                                     MessageBox.Show("You Won!", "Congratulations");
                                     clearScreen();
                                     s = m = h = 0;
@@ -502,7 +502,7 @@ namespace TermProj
                         isPaused = true;
                         btnStart.Enabled = true;
                         counter = 0;
-                        gamedata.Add("Game#" + gameid + "   Game Lost  " + starttime + "   " + tbTimer.Text.ToString());
+                        gamedata.Add("Game#" + gameid + "  Game Lost       " + starttime + "   " + tbTimer.Text.ToString());
                         MessageBox.Show("You Lost!", "Game Over");
                         clearScreen();
                         s = m = h = 0;
