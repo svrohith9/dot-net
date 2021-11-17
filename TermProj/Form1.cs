@@ -13,8 +13,11 @@ namespace TermProj
 {
     public partial class Game : Form
     {
-
+        Form2 form2;
         int initial_x = -1, initial_y = -1;
+        List<string> gamedata = new List<string>();
+        int gameid = 0;
+        string starttime = DateTime.Now.ToString("yyyy-MM-dd h:mm:ss tt");
         Button[,] btnarray;
         int[,] showSol = new int[5, 5];
         System.Timers.Timer t;
@@ -34,7 +37,7 @@ namespace TermProj
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void clearScreen()
@@ -56,12 +59,15 @@ namespace TermProj
             isPaused = false;
             isStarted = true;
             btnStart.Enabled = false;
+            gameid++;
+            starttime = DateTime.Now.ToString("yyyy-MM-dd h:mm:ss tt");
             gameMatrix();
         }
 
         private void resetTimer()
         {
             tbTimer.Text = string.Format("00:00:00");
+
         }
 
         private void btnPause_Click(object sender, EventArgs e)
@@ -317,6 +323,7 @@ namespace TermProj
                                               { 12, 23, 24, 17, 2 },
                                               { 13, 14, 15, 16, 1 } };
                 }
+                gamedata.Add("Game#" + gameid + "   Game Exited " + starttime + "   " + tbTimer.Text.ToString());
 
                 for (int i = 0; i < 5; i++)
                 {
@@ -328,13 +335,15 @@ namespace TermProj
             }
             isPaused = true;
             this.btnStart.Enabled = true;
+            s = m = h = 0;
             this.resetTimer();
         }
 
         private void btnAbort_Click(object sender, EventArgs e)
         {
             //save game data and show dialog
-
+            if (tbTimer.Text != "00:00:00")
+                gamedata.Add("Game#" + gameid + " Game Aborted  " + starttime + "   " + tbTimer.Text.ToString());
             if (initial_x >= 0 && initial_y >= 0)
             {
                 isPaused = true;
@@ -350,7 +359,9 @@ namespace TermProj
 
         private void btnHistory_Click(object sender, EventArgs e)
         {
-
+            form2 = new Form2();
+            form2.form_content = gamedata;
+            form2.ShowDialog();
         }
 
         private void btn_click(Object sender, EventArgs e)
@@ -475,8 +486,10 @@ namespace TermProj
                                     isPaused = true;
                                     btnStart.Enabled = true;
                                     counter = 0;
+                                    gamedata.Add("Game#" + gameid + "   Game Won   " + starttime + "   " + tbTimer.Text.ToString());
                                     MessageBox.Show("You Won!", "Congratulations");
                                     clearScreen();
+                                    s = m = h = 0;
                                     resetTimer();
                                 }
                             }
@@ -489,8 +502,10 @@ namespace TermProj
                         isPaused = true;
                         btnStart.Enabled = true;
                         counter = 0;
+                        gamedata.Add("Game#" + gameid + "   Game Lost  " + starttime + "   " + tbTimer.Text.ToString());
                         MessageBox.Show("You Lost!", "Game Over");
                         clearScreen();
+                        s = m = h = 0;
                         resetTimer();
                     }
                 }

@@ -12,8 +12,7 @@ namespace TermProj
 {
     public partial class Form2 : Form
     {
-        public string form_heading { set; get; }
-        public string form_content { set; get; }
+        public List<string> form_content { set; get; }
 
         public Form2()
         {
@@ -22,8 +21,13 @@ namespace TermProj
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            this.Text = this.form_heading.ToString();
-            this.label1.Text = this.form_content.ToString();
+            foreach (string s in form_content)
+                this.listBox1.Items.Add(s);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
