@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,9 +12,12 @@ using System.Windows.Forms;
 
 namespace TermProj
 {
+
     public partial class Game : Form
     {
         Form2 form2;
+        Form3 form3;
+        Form4 form4;
         int initial_x = -1, initial_y = -1;
         List<string> gamedata = new List<string>();
         int gameid = 0;
@@ -157,7 +161,7 @@ namespace TermProj
                 }
                 if (initial_x == 0 && initial_y == 4)
                 {
-                    showSol = new int[5, 5] { { 14, 15, 16, 1, 2 },
+                    showSol = new int[5, 5] { { 14, 15, 16, 2, 1 },
                                               { 13, 17, 24, 23, 3 },
                                               { 12, 18, 25, 22, 4 },
                                               { 11, 19, 20, 21, 5 },
@@ -323,7 +327,7 @@ namespace TermProj
                                               { 12, 23, 24, 17, 2 },
                                               { 13, 14, 15, 16, 1 } };
                 }
-                gamedata.Add("Game#" + gameid + "  Game Exited    " + starttime + "   " + tbTimer.Text.ToString());
+                gamedata.Add("  Game Exited    " + starttime + "   " + tbTimer.Text.ToString());
 
                 for (int i = 0; i < 5; i++)
                 {
@@ -343,7 +347,7 @@ namespace TermProj
         {
             //save game data and show dialog
             if (tbTimer.Text != "00:00:00")
-                gamedata.Add("Game#" + gameid + "  Game Aborted  " + starttime + "   " + tbTimer.Text.ToString());
+                gamedata.Add("  Game Aborted  " + starttime + "   " + tbTimer.Text.ToString());
             if (initial_x >= 0 && initial_y >= 0)
             {
                 isPaused = true;
@@ -357,11 +361,50 @@ namespace TermProj
 
         }
 
+
         private void btnHistory_Click(object sender, EventArgs e)
         {
             form2 = new Form2();
-            form2.form_content = gamedata;
+            TextWriter tw = null;
+            List<string> strs = new List<string>();
+
+            string path = @"c:\gamedata\history.txt";
+            if (!File.Exists(path))
+            {
+                File.Create(path);
+                tw = new StreamWriter(path);
+            }
+            else if (File.Exists(path))
+            {
+                tw = new StreamWriter(path, true);
+            }
+
+            foreach (string s in gamedata)
+            {
+                tw.WriteLine("Game#" + generateID() + "" + s);
+            }
+            tw.Close();
+
+            string[] lines = System.IO.File.ReadAllLines(path);
+
+            foreach (string line in lines)
+            {
+                strs.Add(line);   
+            }
+
+            tw.Close();
+            form2.form_content = strs;
             form2.ShowDialog();
+        }
+
+        public string generateID()
+        {
+            return Guid.NewGuid().ToString("N").Substring(0, 5);
+        }
+
+        private FileStream FileStream(string path, FileMode openOrCreate)
+        {
+            throw new NotImplementedException();
         }
 
         private void btn_click(Object sender, EventArgs e)
@@ -371,7 +414,7 @@ namespace TermProj
             {
                 if (isStarted)
                 {
-                    if (counter != 0 && counter != 25&&tbTimer.Text!="00:00:00")
+                    if (counter != 0 && counter != 25 && tbTimer.Text != "00:00:00")
                         isPaused = false;
                     //                  test button clicks
                     //                  btnCLicked.Text = "X";
@@ -383,6 +426,7 @@ namespace TermProj
                     }
                     else
                     {
+
 
                         for (int i = 0; i < 5; i++)
                         {
@@ -486,11 +530,27 @@ namespace TermProj
                                     isPaused = true;
                                     btnStart.Enabled = true;
                                     counter = 0;
-                                    gamedata.Add("Game#" + gameid + "  Game Won      " + starttime + "   " + tbTimer.Text.ToString());
-                                    MessageBox.Show("You Won!", "Congratulations");
+                                    gamedata.Add("  Game Won      " + starttime + "   " + tbTimer.Text.ToString());
+                                    //MessageBox.Show("You Won!", "Congratulations");
+                                    form3 = new Form3();
+                                    form3.SetFormHeading("Congratulations");
+                                    form3.SetLabel("You Won!");
+                                    form3.ShowDialog();
+
                                     clearScreen();
                                     s = m = h = 0;
                                     resetTimer();
+
+                                    if (form3.getData() == "Quit")
+                                    {
+                                        Application.Exit();
+                                    }
+                                    else
+                                    {
+                                        btnStart_Click(sender, e);
+                                    }
+
+
                                 }
                             }
                         }
@@ -502,11 +562,26 @@ namespace TermProj
                         isPaused = true;
                         btnStart.Enabled = true;
                         counter = 0;
-                        gamedata.Add("Game#" + gameid + "  Game Lost       " + starttime + "   " + tbTimer.Text.ToString());
-                        MessageBox.Show("You Lost!", "Game Over");
+                        gamedata.Add("  Game Lost       " + starttime + "   " + tbTimer.Text.ToString());
+                        //MessageBox.Show("You Lost!", "Game Over");
                         clearScreen();
                         s = m = h = 0;
                         resetTimer();
+
+                        form3 = new Form3();
+                        form3.SetFormHeading("Game Over");
+                        form3.SetLabel("You Lost!");
+                        form3.ShowDialog();
+
+
+                        if (form3.getData() == "Quit")
+                        {
+                            Application.Exit();
+                        }
+                        else
+                        {
+                            btnStart_Click(sender, e);
+                        }
                     }
                 }
             }
@@ -519,6 +594,12 @@ namespace TermProj
             {
                 isPaused = false;
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            form4 = new Form4();
+            form4.Show();
         }
 
         private bool IsNotLockedSituation(Button btn)
