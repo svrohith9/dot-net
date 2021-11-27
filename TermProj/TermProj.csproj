@@ -107,7 +107,31 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="game_history.txt" />
+    <Content Include="GameSolutions\TextFile1.txt" />
+    <Content Include="GameSolutions\TextFile10.txt" />
+    <Content Include="GameSolutions\TextFile11.txt" />
+    <Content Include="GameSolutions\TextFile12.txt" />
+    <Content Include="GameSolutions\TextFile13.txt" />
+    <Content Include="GameSolutions\TextFile14.txt" />
+    <Content Include="GameSolutions\TextFile15.txt" />
+    <Content Include="GameSolutions\TextFile16.txt" />
+    <Content Include="GameSolutions\TextFile17.txt" />
+    <Content Include="GameSolutions\TextFile18.txt" />
+    <Content Include="GameSolutions\TextFile19.txt" />
+    <Content Include="GameSolutions\TextFile2.txt" />
+    <Content Include="GameSolutions\TextFile20.txt" />
+    <Content Include="GameSolutions\TextFile21.txt" />
+    <Content Include="GameSolutions\TextFile22.txt" />
+    <Content Include="GameSolutions\TextFile23.txt" />
+    <Content Include="GameSolutions\TextFile24.txt" />
+    <Content Include="GameSolutions\TextFile25.txt" />
+    <Content Include="GameSolutions\TextFile3.txt" />
+    <Content Include="GameSolutions\TextFile4.txt" />
+    <Content Include="GameSolutions\TextFile5.txt" />
+    <Content Include="GameSolutions\TextFile6.txt" />
+    <Content Include="GameSolutions\TextFile7.txt" />
+    <Content Include="GameSolutions\TextFile8.txt" />
+    <Content Include="GameSolutions\TextFile9.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

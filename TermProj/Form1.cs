@@ -18,6 +18,8 @@ namespace TermProj
         Form2 form2;
         Form3 form3;
         Form4 form4;
+        string game_history_path = @"c:\gamedata\history.txt";
+        string solutions_src_path = @"C:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\dot-net-win-forms\TermProj\GameSolutions\";
         int initial_x = -1, initial_y = -1;
         List<string> gamedata = new List<string>();
         int gameid = 0;
@@ -122,6 +124,25 @@ namespace TermProj
             Application.Exit();
         }
 
+        private int[,] getSolution(string sol_path)
+        {
+            //var currentDirectory = System.IO.Directory.GetCurrentDirectory();
+            string[] lines = System.IO.File.ReadAllLines(solutions_src_path + sol_path);
+            int[,] result = new int[5, 5];
+
+            string[] arr = lines[0].Split(',');
+            int[] xyz = Array.ConvertAll(arr, x => int.Parse(x));
+            int t = 0;
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < 5; j++)
+                {
+                    result[i, j] = xyz[t++];
+                }
+            }
+            return result;
+        }
+
         private void btnSol_Click(object sender, EventArgs e)
         {
             if (initial_x >= 0 && initial_y >= 0 && btnarray[initial_x, initial_y].Text == "1")
@@ -129,14 +150,16 @@ namespace TermProj
 
                 if (initial_x == 0 && initial_y == 0)
                 {
+                    //showSol = getSolution("TextFile1.txt");
                     showSol = new int[5, 5] { { 1, 16, 15, 14, 13 },
-                                              { 2, 17, 18, 19, 12 },
-                                              { 3, 24, 25, 20, 11 },
-                                              { 4, 23, 22, 21, 10 },
-                                              { 5, 6, 7, 8, 9 } };
+                                          { 2, 17, 18, 19, 12 },
+                                          { 3, 24, 25, 20, 11 },
+                                          { 4, 23, 22, 21, 10 },
+                                          { 5, 6, 7, 8, 9 } };
                 }
                 if (initial_x == 0 && initial_y == 1)
                 {
+                    //showSol = getSolution("TextFile2.txt");
                     showSol = new int[5, 5] { { 16, 1, 2, 3, 4 },
                                               { 15, 17, 18, 19, 5 },
                                               { 14, 24, 25, 20, 6 },
@@ -145,6 +168,7 @@ namespace TermProj
                 }
                 if (initial_x == 0 && initial_y == 2)
                 {
+                    //showSol = getSolution("TextFile3.txt");
                     showSol = new int[5, 5] { { 15, 16, 1, 2, 3 },
                                               { 14, 17, 24, 23, 4 },
                                               { 13, 18, 25, 22, 5 },
@@ -153,6 +177,7 @@ namespace TermProj
                 }
                 if (initial_x == 0 && initial_y == 3)
                 {
+                    //showSol = getSolution("TextFile4.txt");
                     showSol = new int[5, 5] { { 14, 15, 16, 1, 2 },
                                               { 13, 17, 24, 23, 3 },
                                               { 12, 18, 25, 22, 4 },
@@ -161,6 +186,7 @@ namespace TermProj
                 }
                 if (initial_x == 0 && initial_y == 4)
                 {
+                    //showSol = getSolution("TextFile5.txt");
                     showSol = new int[5, 5] { { 14, 15, 16, 2, 1 },
                                               { 13, 17, 24, 23, 3 },
                                               { 12, 18, 25, 22, 4 },
@@ -169,6 +195,7 @@ namespace TermProj
                 }
                 if (initial_x == 1 && initial_y == 0)
                 {
+                    //showSol = getSolution("TextFile6.txt");
                     showSol = new int[5, 5] { { 2, 3, 4, 5, 6 },
                                               { 1, 17, 18, 19, 7 },
                                               { 16, 24, 25, 20, 8 },
@@ -177,6 +204,7 @@ namespace TermProj
                 }
                 if (initial_x == 1 && initial_y == 1)
                 {
+                    //showSol = getSolution("TextFile7.txt");
                     showSol = new int[5, 5] { { 25, 2, 3, 4, 5 },
                                               { 24, 1, 14, 13, 6 },
                                               { 23, 22, 15, 12, 7 },
@@ -185,6 +213,7 @@ namespace TermProj
                 }
                 if (initial_x == 1 && initial_y == 2)
                 {
+                    //showSol = getSolution("TextFile8.txt");
                     showSol = new int[5, 5] { { 21, 20, 2, 3, 4 },
                                               { 22, 19, 1, 5, 6 },
                                               { 23, 18, 17, 8, 7 },
@@ -193,6 +222,7 @@ namespace TermProj
                 }
                 if (initial_x == 1 && initial_y == 3)
                 {
+                    //showSol = getSolution("TextFile9.txt");
                     showSol = new int[5, 5] { { 25, 16, 15, 2, 3 },
                                               { 24, 17, 14, 1, 4 },
                                               { 24, 18, 13, 6, 5 },
@@ -201,6 +231,7 @@ namespace TermProj
                 }
                 if (initial_x == 1 && initial_y == 4)
                 {
+                    //showSol = getSolution("TextFile10.txt");
                     showSol = new int[5, 5] { { 12, 13, 14, 15, 16 },
                                               { 11, 23, 22, 17, 1 },
                                               { 10, 24, 23, 18, 2 },
@@ -209,6 +240,7 @@ namespace TermProj
                 }
                 if (initial_x == 2 && initial_y == 0)
                 {
+                    //showSol = getSolution("TextFile11.txt");
                     showSol = new int[5, 5] { { 3, 4, 5, 6, 7 },
                                               { 2, 23, 22, 21, 8 },
                                               { 1, 24, 25, 20, 9 },
@@ -217,6 +249,7 @@ namespace TermProj
                 }
                 if (initial_x == 2 && initial_y == 1)
                 {
+                    //showSol = getSolution("TextFile12.txt");
                     showSol = new int[5, 5] { { 25, 3, 4, 5, 6 },
                                               { 24, 2, 15, 14, 7 },
                                               { 23, 1, 16, 13, 8 },
@@ -225,6 +258,7 @@ namespace TermProj
                 }
                 if (initial_x == 2 && initial_y == 2)
                 {
+                    //showSol = getSolution("TextFile13.txt");
                     showSol = new int[5, 5] { { 21, 20, 3, 4, 5 },
                                               { 22, 19, 2, 8, 6 },
                                               { 23, 18, 1, 9, 7 },
@@ -233,6 +267,7 @@ namespace TermProj
                 }
                 if (initial_x == 2 && initial_y == 3)
                 {
+                    //showSol = getSolution("TextFile14.txt");
                     showSol = new int[5, 5] { { 25, 16, 15, 3, 4 },
                                               { 24, 17, 14, 2, 5 },
                                               { 23, 18, 13, 1, 6 },
@@ -241,6 +276,7 @@ namespace TermProj
                 }
                 if (initial_x == 2 && initial_y == 4)
                 {
+                    //showSol = getSolution("TextFile15.txt");
                     showSol = new int[5, 5] { { 13, 12, 11, 10, 8 },
                                               { 14, 23, 22, 9, 7 },
                                               { 15, 24, 21, 6, 1 },
@@ -249,6 +285,7 @@ namespace TermProj
                 }
                 if (initial_x == 3 && initial_y == 0)
                 {
+                    //showSol = getSolution("TextFile16.txt");
                     showSol = new int[5, 5] { { 4, 5, 6, 7, 8 },
                                               { 3, 23, 22, 21, 9 },
                                               { 2, 24, 25, 20, 10 },
@@ -257,6 +294,7 @@ namespace TermProj
                 }
                 if (initial_x == 3 && initial_y == 1)
                 {
+                    //showSol = getSolution("TextFile17.txt");
                     showSol = new int[5, 5] { { 5, 4, 15, 16, 17 },
                                               { 6, 3, 14, 19, 18 },
                                               { 7, 2, 13, 21, 20 },
@@ -265,6 +303,7 @@ namespace TermProj
                 }
                 if (initial_x == 3 && initial_y == 2)
                 {
+                    //showSol = getSolution("TextFile18.txt");
                     showSol = new int[5, 5] { { 21, 20, 4, 5, 6 },
                                               { 22, 19, 3, 7, 8 },
                                               { 23, 18, 2, 10, 9 },
@@ -273,6 +312,7 @@ namespace TermProj
                 }
                 if (initial_x == 3 && initial_y == 3)
                 {
+                    //showSol = getSolution("TextFile19.txt");
                     showSol = new int[5, 5] { { 11, 12, 13, 14, 15 },
                                               { 10, 22, 23, 24, 16 },
                                               { 9, 21, 25, 18, 17 },
@@ -281,6 +321,7 @@ namespace TermProj
                 }
                 if (initial_x == 3 && initial_y == 4)
                 {
+                    //showSol = getSolution("TextFile20.txt");
                     showSol = new int[5, 5] { { 10, 11, 12, 13, 14 },
                                               { 9, 21, 22, 23, 15 },
                                               { 8, 20, 25, 24, 16 },
@@ -289,6 +330,7 @@ namespace TermProj
                 }
                 if (initial_x == 4 && initial_y == 0)
                 {
+                    //showSol = getSolution("TextFile21.txt");
                     showSol = new int[5, 5] { { 5, 6, 7, 8, 9 },
                                               { 4, 19, 20, 21, 10 },
                                               { 3, 18, 25, 22, 11 },
@@ -297,6 +339,7 @@ namespace TermProj
                 }
                 if (initial_x == 4 && initial_y == 1)
                 {
+                    //showSol = getSolution("TextFile22.txt");
                     showSol = new int[5, 5] { { 12, 11, 10, 9, 8 },
                                               { 13, 23, 22, 21, 7 },
                                               { 14, 24, 25, 20, 6 },
@@ -305,6 +348,7 @@ namespace TermProj
                 }
                 if (initial_x == 4 && initial_y == 2)
                 {
+                    //showSol = getSolution("TextFile23.txt");
                     showSol = new int[5, 5] { { 11, 10, 9, 8, 7 },
                                               { 12, 23, 22, 21, 6 },
                                               { 13, 24, 25, 20, 5 },
@@ -313,6 +357,7 @@ namespace TermProj
                 }
                 if (initial_x == 4 && initial_y == 3)
                 {
+                    //showSol = getSolution("TextFile24.txt");
                     showSol = new int[5, 5] { { 10, 9, 8, 7, 6 },
                                               { 11, 21, 20, 19, 5 },
                                               { 12, 22, 25, 18, 4 },
@@ -321,6 +366,7 @@ namespace TermProj
                 }
                 if (initial_x == 4 && initial_y == 4)
                 {
+                    //showSol = getSolution("TextFile25.txt");
                     showSol = new int[5, 5] { { 9, 8, 7, 6, 5 },
                                               { 10, 21, 21, 19, 4 },
                                               { 11, 22, 25, 18, 3 },
@@ -361,14 +407,13 @@ namespace TermProj
 
         }
 
-
         private void btnHistory_Click(object sender, EventArgs e)
         {
             form2 = new Form2();
             TextWriter tw = null;
             List<string> strs = new List<string>();
 
-            string path = @"c:\gamedata\history.txt";
+            string path = game_history_path;
             if (!File.Exists(path))
             {
                 File.Create(path);
@@ -383,13 +428,14 @@ namespace TermProj
             {
                 tw.WriteLine("Game#" + generateID() + "" + s);
             }
+            gamedata.Clear();
             tw.Close();
 
             string[] lines = System.IO.File.ReadAllLines(path);
 
             foreach (string line in lines)
             {
-                strs.Add(line);   
+                strs.Add(line);
             }
 
             tw.Close();
