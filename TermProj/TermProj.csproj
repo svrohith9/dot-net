@@ -132,6 +132,7 @@
     <Content Include="GameSolutions\TextFile7.txt" />
     <Content Include="GameSolutions\TextFile8.txt" />
     <Content Include="GameSolutions\TextFile9.txt" />
+    <Content Include="game_history.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

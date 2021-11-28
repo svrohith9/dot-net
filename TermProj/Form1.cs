@@ -18,7 +18,6 @@ namespace TermProj
         Form2 form2;
         Form3 form3;
         Form4 form4;
-        string game_history_path = @"c:\gamedata\history.txt";
         //path for the solutions
         //string solutions_src_path = @"c:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\dot-net-win-forms\TermProj\GameSolutions\";
         string currentDirectory = System.IO.Directory.GetCurrentDirectory();
@@ -314,7 +313,8 @@ namespace TermProj
             TextWriter tw = null;
             List<string> strs = new List<string>();
 
-            string path = game_history_path;
+            string[] game_history= currentDirectory.Split(new String[] { "TermProj" }, StringSplitOptions.None);
+            string path = game_history[0]+ @"TermProj\game_history.txt";
             if (!File.Exists(path))
             {
                 File.Create(path);
