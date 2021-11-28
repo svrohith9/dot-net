@@ -19,7 +19,9 @@ namespace TermProj
         Form3 form3;
         Form4 form4;
         string game_history_path = @"c:\gamedata\history.txt";
-        string solutions_src_path = @"c:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\dot-net-win-forms\TermProj\GameSolutions\";
+        //path for the solutions
+        //string solutions_src_path = @"c:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\dot-net-win-forms\TermProj\GameSolutions\";
+        string currentDirectory = System.IO.Directory.GetCurrentDirectory();
         int initial_x = -1, initial_y = -1;
         List<string> gamedata = new List<string>();
         int gameid = 0;
@@ -126,8 +128,8 @@ namespace TermProj
 
         private int[,] getSolution(string sol_path)
         {
-            //var currentDirectory = System.IO.Directory.GetCurrentDirectory();
-            string[] lines = System.IO.File.ReadAllLines(solutions_src_path + sol_path);
+            string[] dir = currentDirectory.Split(new String[] { "TermProj" }, StringSplitOptions.None);
+            string[] lines = System.IO.File.ReadAllLines(dir[0]+ @"TermProj\GameSolutions\" + sol_path);
             int[,] result = new int[5, 5];
 
             string[] arr = lines[0].Split(',');

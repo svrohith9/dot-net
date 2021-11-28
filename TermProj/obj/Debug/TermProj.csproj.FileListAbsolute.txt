@@ -1,7 +1,6 @@
 C:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\dot-net-win-forms\TermProj\bin\Debug\TermProj.exe.config
 C:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\dot-net-win-forms\TermProj\bin\Debug\TermProj.exe
 C:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\dot-net-win-forms\TermProj\bin\Debug\TermProj.pdb
-C:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\dot-net-win-forms\TermProj\obj\Debug\TermProj.csproj.AssemblyReference.cache
 C:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\dot-net-win-forms\TermProj\obj\Debug\TermProj.Game.resources
 C:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\dot-net-win-forms\TermProj\obj\Debug\TermProj.Form2.resources
 C:\Users\svroh\Desktop\myUSF\Advanced objected programming\apps\dot-net-win-forms\TermProj\obj\Debug\TermProj.Form3.resources
