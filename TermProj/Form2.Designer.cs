@@ -37,25 +37,24 @@ namespace TermProj
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(-9, 9);
+            this.label1.Location = new System.Drawing.Point(29, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(402, 30);
+            this.label1.Size = new System.Drawing.Size(397, 30);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Game-id  Game-result  Start-time  Time taken";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.Text = "Game-id   Player  Game-result  Start-time  Time taken";
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(32, 42);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(345, 251);
+            this.listBox1.Size = new System.Drawing.Size(394, 251);
             this.listBox1.TabIndex = 1;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button1.Location = new System.Drawing.Point(302, 306);
+            this.button1.Location = new System.Drawing.Point(365, 319);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 33);
             this.button1.TabIndex = 2;
@@ -67,7 +66,7 @@ namespace TermProj
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(410, 347);
+            this.ClientSize = new System.Drawing.Size(452, 364);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label1);
