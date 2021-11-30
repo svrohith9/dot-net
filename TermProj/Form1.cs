@@ -1,13 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Timers;
 using System.Windows.Forms;
 
 namespace TermProj
@@ -70,6 +63,7 @@ namespace TermProj
                 btnStart.Enabled = false;
                 gameid++;
                 starttime = DateTime.Now.ToString("yyyy-MM-dd h:mm:ss tt");
+                tbName.Enabled = false;
                 gameMatrix();
             }
             else
@@ -135,7 +129,7 @@ namespace TermProj
         private int[,] getSolution(string sol_path)
         {
             string[] dir = currentDirectory.Split(new String[] { "TermProj" }, StringSplitOptions.None);
-            string[] lines = System.IO.File.ReadAllLines(dir[0]+ @"TermProj\GameSolutions\" + sol_path);
+            string[] lines = System.IO.File.ReadAllLines(dir[0] + @"TermProj\GameSolutions\" + sol_path);
             int[,] result = new int[5, 5];
 
             string[] arr = lines[0].Split(',');
@@ -280,8 +274,8 @@ namespace TermProj
                     showSol = getSolution("TextFile25.txt");
 
                 }
-                gamedata.Add(tbName.Text.ToString()+"  Game Exited    " + starttime + "   " + tbTimer.Text.ToString());
-
+                gamedata.Add(tbName.Text.ToString() + "     Game Exited    " + starttime + "   " + tbTimer.Text.ToString());
+                resetName();
                 for (int i = 0; i < 5; i++)
                 {
                     for (int j = 0; j < 5; j++)
@@ -300,7 +294,10 @@ namespace TermProj
         {
             //save game data and show dialog
             if (tbTimer.Text != "00:00:00")
-                gamedata.Add(tbName.Text.ToString() + "  Game Aborted  " + starttime + "   " + tbTimer.Text.ToString());
+            {
+                gamedata.Add(tbName.Text.ToString() + "     Game Aborted  " + starttime + "   " + tbTimer.Text.ToString());
+                resetName();
+            }
             if (initial_x >= 0 && initial_y >= 0)
             {
                 isPaused = true;
@@ -320,8 +317,8 @@ namespace TermProj
             TextWriter tw = null;
             List<string> strs = new List<string>();
 
-            string[] game_history= currentDirectory.Split(new String[] { "TermProj" }, StringSplitOptions.None);
-            string path = game_history[0]+ @"TermProj\game_history.txt";
+            string[] game_history = currentDirectory.Split(new String[] { "TermProj" }, StringSplitOptions.None);
+            string path = game_history[0] + @"TermProj\game_history.txt";
             if (!File.Exists(path))
             {
                 File.Create(path);
@@ -334,7 +331,7 @@ namespace TermProj
 
             foreach (string s in gamedata)
             {
-                tw.WriteLine("Game#" + generateID() + "  " + s);
+                tw.WriteLine("Game#1    " + "  " + s);
             }
             gamedata.Clear();
             tw.Close();
@@ -349,16 +346,6 @@ namespace TermProj
             tw.Close();
             form2.form_content = strs;
             form2.ShowDialog();
-        }
-
-        public string generateID()
-        {
-            return Guid.NewGuid().ToString("N").Substring(0, 5);
-        }
-
-        private FileStream FileStream(string path, FileMode openOrCreate)
-        {
-            throw new NotImplementedException();
         }
 
         private void btn_click(Object sender, EventArgs e)
@@ -484,7 +471,8 @@ namespace TermProj
                                     isPaused = true;
                                     btnStart.Enabled = true;
                                     counter = 0;
-                                    gamedata.Add(tbName.Text.ToString() + "  Game Won      " + starttime + "   " + tbTimer.Text.ToString());
+                                    gamedata.Add(tbName.Text.ToString() + "     Game Won      " + starttime + "   " + tbTimer.Text.ToString());
+                                    resetName();
                                     //MessageBox.Show("You Won!", "Congratulations");
                                     form3 = new Form3();
                                     form3.SetFormHeading("Congratulations");
@@ -516,7 +504,8 @@ namespace TermProj
                         isPaused = true;
                         btnStart.Enabled = true;
                         counter = 0;
-                        gamedata.Add(tbName.Text.ToString() + "  Game Lost       " + starttime + "   " + tbTimer.Text.ToString());
+                        gamedata.Add(tbName.Text.ToString() + "     Game Lost       " + starttime + "   " + tbTimer.Text.ToString());
+                        resetName();
                         //MessageBox.Show("You Lost!", "Game Over");
                         clearScreen();
                         s = m = h = 0;
@@ -595,5 +584,10 @@ namespace TermProj
         }
 
         public static readonly Random random = new Random();
+
+        public void resetName()
+        {
+            tbName.Enabled = true;
+        }
     }
 }
